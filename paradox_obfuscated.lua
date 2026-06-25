@@ -1,1 +1,1 @@
-
+print("PARADOX is running!")
