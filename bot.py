@@ -121,4 +121,4 @@ async def admin_stats(interaction: discord.Interaction):
         msg += f'<@{u[0]}> | Key: {u[1]} | HWID: {u[2] or "None"} | Banned: {u[6]}\n'
     await interaction.response.send_message(msg[:2000], ephemeral=True)
 
-bot.run(os.getenv('BOT_TOKEN'))
+bot.run(os.getenv('MTUxOTY3NjM0MzAwNzMxODA1Ng.GCVNJt.Ffj419cFl7WtvR9Rt7kVWS0hguEott-idgUFuk'))
