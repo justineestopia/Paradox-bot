@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PARADOX Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🧬 PARADOX Admin Panel</h1>
+    <a href="/generate">+ Generate Key</a>
+    <table>
+        <tr><th>Discord ID</th><th>Key</th><th>HWID</th><th>Expires</th><th>Execs</th><th>Banned</th><th>Actions</th></tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] or 'None' }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ 'Yes' if user[6] else 'No' }}</td>
+            <td>
+                <a href="/ban/{{ user[0] }}">Ban</a>
+                <a href="/unban/{{ user[0] }}">Unban</a>
+                <a href="/delete/{{ user[0] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
