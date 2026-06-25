@@ -1,20 +1,18 @@
 import discord
-from discord import app_commands
 from discord.ext import commands
 
-TOKEN = "PASTE_YOUR_BOT_TOKEN_HERE"  # <--- PASTE YOUR ACTUAL TOKEN HERE
+TOKEN = "MTUxOTcwNzk5ODI2MjM5NTEwMw.GH0TnY.arNHVGdmKheMQ_ZowQ3qDN7s_C3rq-1yWjobv8"
 
 intents = discord.Intents.default()
-intents.members = True
+intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_ready():
-    await bot.tree.sync()
-    print(f'✅ PARADOX Bot online as {bot.user}')
+    print(f'✅ Bot is online as {bot.user}')
 
-@bot.tree.command(name='ping', description='Check if bot is alive')
-async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message('🏓 Pong!')
+@bot.command()
+async def ping(ctx):
+    await ctx.send('Pong!')
 
-bot.run(MTUxOTcwNzk5ODI2MjM5NTEwMw.Gh7sw9.q0uSgaUR-e87pmeUIVY756T2UCc54dgAdrTiWI)
+bot.run(TOKEN)
